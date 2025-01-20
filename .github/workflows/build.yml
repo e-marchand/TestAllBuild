@@ -1,0 +1,23 @@
+name: BuildAndRelease
+
+on: 
+  release:
+    types: [published]
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+ 
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ${{github.event.release.tag_name}}
+        uses: 4d/build4d-action@main
+        with:
+          product-line: main
+          version: main
+          build: ${{github.event.release.tag_name}}
+          token: ${{ secrets.DLTK }}
+          actions: "build,pack,archive"
+      - name: Upload ${{github.event.release.tag_name}}
+        run: |
+          gh release upload ${{github.event.release.tag_name}} build/TestAllBuild.zip

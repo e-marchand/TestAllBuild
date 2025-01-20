@@ -1,0 +1,12 @@
+{
+	"dependencies": {
+		"SampleTestProject": {
+			"github": "e-marchand/SampleTestProject",
+			"version": "latest"
+		},
+		"4DPop": {
+			"github": "vdelachaux/4DPop",
+			"version": "latest"
+		}
+	}
+}
