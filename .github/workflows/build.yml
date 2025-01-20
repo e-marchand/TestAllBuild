@@ -13,9 +13,9 @@ jobs:
       - name: Build ${{github.event.release.tag_name}}
         uses: 4d/build4d-action@main
         with:
-          product-line: main
-          version: main
-          build: ${{github.event.release.tag_name}}
+          product-line: 20Rx
+          version: ${{github.event.release.tag_name}}
+          build: latest
           token: ${{ secrets.DLTK }}
           actions: "build,pack,archive"
       - name: Upload ${{github.event.release.tag_name}}
