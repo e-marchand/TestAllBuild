@@ -3,7 +3,10 @@ name: BuildAndRelease
 on: 
   release:
     types: [published]
-
+    
+permissions:
+  contents: write
+  
 jobs:
   fetch:
     runs-on: macos-latest
